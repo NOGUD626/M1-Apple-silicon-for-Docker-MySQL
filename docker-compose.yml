@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    build: ./db/
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: nogu
+      MYSQL_PASSWORD: nogu8940626
+      MYSQL_DATABASE: test
+    container_name: mysql-container
+    volumes:
+      # 初期データを投入するSQLが格納されているdir
+      - ./db/mysql_init:/docker-entrypoint-initdb.d
+      # 永続化するときにマウントするdir
+      - ./db/mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
