@@ -4,8 +4,8 @@ services:
     build: ./db/
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: nogu
-      MYSQL_PASSWORD: nogu8940626
+      MYSQL_USER: hogehoge
+      MYSQL_PASSWORD: hogehoge
       MYSQL_DATABASE: test
     container_name: mysql-container
     volumes:
